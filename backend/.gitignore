@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# env (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# coverage / test output
+coverage/
+.nyc_output/
+
+# editor & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# mongodb local data (if ever run under this folder)
+data/db/
+*.lock
