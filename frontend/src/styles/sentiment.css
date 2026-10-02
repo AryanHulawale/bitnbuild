@@ -1,0 +1,150 @@
+/* Styles extracted from Sentiment.jsx */
+
+.gauge-row {
+  gap: 16px;
+}
+
+.gauge-label {
+  font-size: 30px;
+  color: #0A3D26;
+  animation: fadeIn 0.6s ease both;
+  transition: color 0.3s ease;
+}
+
+.gauge-pin {
+  transform-origin: 100px 92px;
+  animation: pinPulse 2.4s ease-in-out infinite;
+}
+
+.desk-row {
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.desk-row:hover {
+  background: #F2F6F1;
+  transform: translateX(2px);
+}
+
+.desk-score {
+  font-size: 11px;
+}
+
+.desk-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.desk-table tbody tr:hover td {
+  background: #FAFCF9;
+}
+
+.dossier-title {
+  margin-right: auto;
+  letter-spacing: 0.2px;
+}
+
+.symbol-input {
+  width: 150px;
+  border: 1px solid #D8E2D8;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.symbol-input:focus {
+  border-color: #0C6B43;
+  box-shadow: 0 0 0 3px rgba(12, 107, 67, 0.12);
+  outline: none;
+}
+
+.news-headline {
+  margin-top: 4px;
+}
+
+.news-why {
+  margin-top: 4px;
+}
+
+.news-pop {
+  animation: rise 0.45s ease both;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-pop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -8px rgba(23, 36, 28, 0.25);
+}
+
+.verdict-slide {
+  animation: verdictIn 0.5s ease both;
+}
+
+/* ---------- new feature styles ---------- */
+.flip-banner {
+  background: #FFF8E1;
+  border: 1px solid #E2D3A3;
+  color: #6B5312;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flip-banner .btn { margin-left: auto; }
+
+.fg { margin-top: 10px; font-size: 13.5px; }
+.fg b { font-size: 26px; font-family: Fraunces, Georgia, serif; color: #0A3D26; margin-right: 6px; }
+.fg-track { height: 8px; border-radius: 6px; background: #EEF1EE; margin-top: 6px; overflow: hidden; }
+.fg-track > div { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #C9A227, #0C6B43); transition: width 0.6s ease; }
+
+.heat {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  border: 1px solid var(--line, #E1E7DF);
+}
+
+.live, .scrub { font-size: 12.5px; color: #68796D; display: inline-flex; gap: 6px; align-items: center; }
+.live input { accent-color: #0C6B43; }
+
+.hl-link { cursor: pointer; }
+.hl-link:hover { text-decoration: underline; color: #0C6B43; }
+
+.cloud { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; }
+.cloud .pos { color: #0C6B43; font-weight: 700; }
+.cloud .neg { color: #AE3A30; font-weight: 700; }
+
+.badge {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.badge:hover {
+  transform: scale(1.06);
+  box-shadow: 0 3px 8px -4px rgba(23, 36, 28, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes verdictIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pinPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}

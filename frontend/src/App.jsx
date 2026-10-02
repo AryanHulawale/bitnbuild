@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { api, fmtMoney } from './lib.js';
-import Dashboard from './pages/Dashboard.jsx';
-import Trade from './pages/Trade.jsx';
-import Sentiment from './pages/Sentiment.jsx';
-import RiskLab from './pages/RiskLab.jsx';
-import Alerts from './pages/Alerts.jsx';
+
+const Dashboard = lazy(() => import('./pages/Dashboard.jsx'));
+const Trade = lazy(() => import('./pages/Trade.jsx'));
+const Sentiment = lazy(() => import('./pages/Sentiment.jsx'));
+const RiskLab = lazy(() => import('./pages/RiskLab.jsx'));
+const Alerts = lazy(() => import('./pages/Alerts.jsx'));
 
 const TABS = [
   ['dashboard', 'Portfolio'],
@@ -99,11 +100,13 @@ export default function App() {
           <h2>{title}</h2>
           <p>{sub}</p>
         </div>
-        {tab === 'dashboard' && <Dashboard summary={summary} />}
-        {tab === 'trade' && <Trade refresh={refresh} />}
-        {tab === 'sentiment' && <Sentiment />}
-        {tab === 'risk' && <RiskLab summary={summary} />}
-        {tab === 'alerts' && <Alerts />}
+        <Suspense fallback={<div className="panel"><p className="sub">Loading desk…</p></div>}>
+          {tab === 'dashboard' && <Dashboard summary={summary} />}
+          {tab === 'trade' && <Trade refresh={refresh} />}
+          {tab === 'sentiment' && <Sentiment />}
+          {tab === 'risk' && <RiskLab summary={summary} />}
+          {tab === 'alerts' && <Alerts />}
+        </Suspense>
         <div className="foot">StockPulse · virtual capital only — no real money moves here · quotes via Stooq, sentiment via in-house lexicon</div>
       </div>
       {toast && <div className="toast">{toast}</div>}
