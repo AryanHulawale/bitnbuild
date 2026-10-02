@@ -155,3 +155,15 @@ b.sym{letter-spacing:.3px}
 @keyframes sh{from{background-position:200% 0}to{background-position:-200% 0}}
 .pill{display:inline-block;padding:2px 9px;border-radius:7px;font-size:11.5px;font-weight:700;background:var(--green-tint);color:var(--green-dark);border:1px solid #CBDDCF}
 .spark{display:block}
+
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.banner{border:1px solid #E1E7DF;border-radius:10px;padding:8px 12px;font-size:12.5px;margin:0 0 10px;background:#FBF6E8;color:#6B5518}
+.banner.err{background:#FBEDEB;color:#8A2E26;border-color:#EBC9C5}
+.shock{display:flex;align-items:center;gap:10px;margin:0 0 12px;flex-wrap:wrap}
+.shock input[type=range]{flex:1;min-width:160px;accent-color:#0C6B43}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chip{border:1px solid #EBC9C5;background:#FBEDEB;color:#8A2E26;border-radius:999px;padding:3px 10px;font-size:12px}
+.legend{display:flex;align-items:center;gap:8px;font-size:11px;color:#68796D;margin-top:8px}
+.legend i{display:block;height:8px;width:120px;border-radius:4px;background:linear-gradient(90deg,rgba(174,58,48,.6),#fff,rgba(12,107,67,.6))}
+.btn:focus-visible,input:focus-visible{outline:2px solid #0C6B43;outline-offset:2px}
+.kpi.skeleton .v{color:transparent;background:#EEF2EC;border-radius:6px;width:60%}
